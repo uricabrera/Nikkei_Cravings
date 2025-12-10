@@ -25,7 +25,6 @@ export const CartProvider = ({children}) => {
             if (product.id === prod.id) {
                 prod.quantity += quantity;
             }
-            console.log(newCart)
             return prod;
         });
         if (!newCart.some((prod) => prod.id === product.id)) {
@@ -33,7 +32,6 @@ export const CartProvider = ({children}) => {
                 ...product,
                 quantity: quantity
             });
-            console.log(newCart)
         }
         setCart(newCart);
     }
@@ -53,7 +51,6 @@ export const CartProvider = ({children}) => {
         for(let product of cart){
             totalPrice += product.totalForItem;
         }
-        console.log(totalPrice)
 
         return totalPrice;
     }
